@@ -1,0 +1,40 @@
+ #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{     
+    int n;
+    printf("Enter the number of participants \n");
+    //taking input form user
+    scanf("%d",&n);
+    // Initializing array of size 'n'
+    int runs[n];
+    printf("Enter the score \n");
+    //takeing input in array 
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&runs[i]);
+    }
+        //we assign some values and we keep changing there value for shorting array in incresing order
+    int max=0,nmax=1,min=0,nmin=1;
+
+    for (int i=1;i<n;i++)
+    {
+        if(runs[i]>max)
+        max=i;
+        if(runs[min]>runs[i])
+        min=i;
+        
+    }
+    
+    for (int i=0;i<n;i++)
+    {
+        if(runs[i]<runs[max]&&runs[i]>runs[nmax])
+        nmax=i;
+        if(runs[i]>runs[min]&&runs[i]<runs[nmin])
+        nmin=i;
+    }
+    printf("First %d \n2nd  %d \nlast %d \n2nd last   %d",runs[max],runs[nmax],runs[min],runs[nmin]);
+
+    return 0;
+}
