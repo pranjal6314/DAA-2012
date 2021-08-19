@@ -1,0 +1,20 @@
+using namespace std;
+ 
+int fib(int n)
+{
+    if (n <=1)
+        return n;
+      //we use recursion method function call it self
+    return fib(n-1) + fib(n-2);
+}
+ 
+int main ()
+{
+    int n;
+    cout<<"which Fibonacci numbers do you want to know: \n";
+    cin>>n;
+    //calling function fib()
+    cout<<"required number is: \n";
+   cout << fib(n);
+   return 0;
+}
